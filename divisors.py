@@ -1,8 +1,13 @@
 # divisors.py
 import sys
 
-  # 명령행 인자로 입력된 숫자 받기
+# 입력 처리 (argv 또는 stdin 둘 다 가능)
+if len(sys.argv) > 1:
+    n = int(sys.argv[1])
+else:
+    n = int(sys.stdin.read().strip())
 
-for i in range(1, 101):
-    if 100 % i == 0:
+# 약수 출력
+for i in range(1, n + 1):
+    if n % i == 0:
         print(i)
